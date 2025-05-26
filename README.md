@@ -28,6 +28,7 @@ The api server is connected to the web page via axios library. The web page post
 
 
 **Future improvements:** 
+
 This application could be optimized by implementing these features:
 - More "pythonic" approach at keyword_mapper.py, by using dictionaries
 - UI optimization
@@ -37,6 +38,7 @@ This application could be optimized by implementing these features:
 - LLM usage for more accurate dynamic answers
 
 **Execution instructions (Windows):**
+
 Setup backend folder:
 ```bash
 python -m venv venv
@@ -49,6 +51,7 @@ uvicorn api:app --reload
 ```
 
 Setup frontend folder (Ensure you have downloaded node.js):
+
 At main folder:
 ```bash
 npm create vite@latest frontend --template react
