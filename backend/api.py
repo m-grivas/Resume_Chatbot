@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 from pydantic import BaseModel
+import keyword_mapper
 
 class Query(BaseModel):
     question: str
@@ -16,7 +17,7 @@ app = FastAPI()
 @app.post("/", response_model=Answer)
 def post_query(request: Query):
     print(request.question)
-    return {"message":request.question}
+    return {"message":keyword_mapper.find_best_response("keywords.txt", request.question)}
 
 
 # if __name__ == "__main__":
