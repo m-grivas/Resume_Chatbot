@@ -13,6 +13,14 @@ class Answer(BaseModel):
 
 app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],  # React dev server
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 #Post endpoint that gets user question and returns it back
 @app.post("/", response_model=Answer)
 def post_query(request: Query):
