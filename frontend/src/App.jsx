@@ -39,7 +39,7 @@ function App() {
         <div className="card bg-secondary text-light h-75" style={{ width: '700px' }}>
           <div className="card-body">
             {/* Title to ask the user for a question */}
-            <h2 className="text-center mb-4">Ask a Question</h2>
+            <h2 className="text-center mb-4">Interview chatbot</h2>
             <form onSubmit={(e) => {e.preventDefault(); handleSubmit(question);}}>
               <div className="input-group mb-3">
                 {/* input prompt */}
