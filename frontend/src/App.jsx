@@ -2,7 +2,6 @@ import { useState } from 'react'
 import api from './api'
 import Profile from './assets/Profile_picture.jpg'
 
-
 function App() {
   const [question, setQuestion] = useState("");
   const [response, setResponse] = useState("");
@@ -21,6 +20,22 @@ function App() {
   return (
     <>
       <div className="d-flex justify-content-center align-items-center vh-100 gap-3 bg-dark p-3">
+        {/* example question card on the left */}
+        <div className="card bg-secondary text-light h-75" style={{ width: '250px' }}>
+          <div className="card-body">
+            <h5 className="card-title my-3">Example questions</h5>
+            <div className="d-flex flex-column gap-2">
+              <Example_question text="Tell me something about yourself." onSubmit={handleSubmit}/>
+              <Example_question text="Give some personality traits that describe you." onSubmit={handleSubmit}/>
+              <Example_question text="What projects have you worked on?" onSubmit={handleSubmit}/>
+              <Example_question text="What are your skills?" onSubmit={handleSubmit}/>
+              <Example_question text="Where did you study?" onSubmit={handleSubmit}/>
+              <Example_question text="What are your hobbies?" onSubmit={handleSubmit}/>
+            </div>
+          </div>
+        </div>
+        
+        {/* main card to contain question and answer */}
         <div className="card bg-secondary text-light h-75" style={{ width: '700px' }}>
           <div className="card-body">
             {/* Title to ask the user for a question */}
@@ -67,4 +82,17 @@ function App() {
   )
 }
 
+// component for clickable example question
+function Example_question({text, onSubmit}) {
+  return (
+    <button 
+      className="btn btn-outline-light btn-sm text-start w-100" 
+      onClick={() => onSubmit(text)}
+    >
+      "{text}"
+    </button>
+  );
+}
+
 export default App
+
